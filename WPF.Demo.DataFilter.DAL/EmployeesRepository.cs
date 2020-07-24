@@ -11,8 +11,7 @@ namespace WPF.Demo.DataFilter.DAL
     {
         private const string EmployeeFilePath = "employees.json";
         public async Task<IEnumerable<Employee>>  GetEmployeesAsync()
-        {
-            
+        {            
             TextReader jsonFileReader = new StreamReader(EmployeeFilePath);
             string text = await jsonFileReader.ReadToEndAsync();
             var employees = JsonConvert.DeserializeObject<Employee[]>(text);

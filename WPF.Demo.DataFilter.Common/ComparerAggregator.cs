@@ -18,5 +18,10 @@ namespace WPF.Demo.DataFilter.Common
         {
             return aggregate.All(a=>a.Compare(value));
         }
+
+        public void RaiseFilterChanged()
+        {
+            OnFilterChanged.Invoke();
+        }
     }
 }

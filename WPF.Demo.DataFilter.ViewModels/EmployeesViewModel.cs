@@ -19,6 +19,8 @@ namespace WPF.Demo.DataFilter.ViewModels
             set
             {
                 Set(ref employeeTypeSelected, value);
+                this.comparerAggregator?.RaiseFilterChanged();
+                
             }
         }
 

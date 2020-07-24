@@ -32,7 +32,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Content="Filter by employee type:"/>
-            <ComboBox Grid.Column="0" Grid.Row="1" Width="100" ItemsSource="{DynamicResource EmployeeTypes}" SelectedValue="{Binding EmployeeTypeSelected}">
+            <ComboBox Grid.Column="0" Grid.Row="1" Width="100" ItemsSource="{DynamicResource EmployeeTypes}" SelectedItem="{Binding Source={StaticResource Locator},Path=EmployeeModel.EmployeeTypeSelected,Mode=TwoWay}">
                 <ComboBox.Resources>
                     <col:ArrayList x:Key="EmployeeTypes">
                         <sys:String >E1</sys:String>

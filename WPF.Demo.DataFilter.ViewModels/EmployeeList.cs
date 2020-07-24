@@ -11,7 +11,7 @@ namespace WPF.Demo.DataFilter.ViewModels
 {
     public sealed class EmployeeList: ViewModelBase
     {
-
+        private IEnumerable<Employee> employeesFullList;
         private readonly IFilter<Employee> filters;
         private IEmployeesRepository repository;
 
@@ -31,11 +31,12 @@ namespace WPF.Demo.DataFilter.ViewModels
 
         private void FilterList()
         {
-            this.Employees = this.filters.Apply(Employees);
+            this.Employees = this.filters.Apply(this.employeesFullList);
         }
         private async Task initAsync()
         {
             this.Employees = await repository.GetEmployeesAsync();
+            this.employeesFullList = this.Employees;
         }
     }
 }
