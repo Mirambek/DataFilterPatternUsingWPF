@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPF.Demo.DataFilter.Common\WPF.Demo.DataFilter.Common.csproj" />
+    <ProjectReference Include="..\WPF.Demo.DataFilter.Repository\WPF.Demo.DataFilter.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,11 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.Demo.DataFilter"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        xmlns:col="clr-namespace:System.Collections;assembly=System.Runtime.Extensions"
         mc:Ignorable="d"
-        Title="Demo Filter pattern" Height="450" Width="800">
+        Title="Demo Filter pattern" Height="450" Width="800" MaxWidth="600">
+    <Window.Resources>
+    <ResourceDictionary>
+            <vm:ViewModelLocator 
+                x:Key="Locator"
+              xmlns:vm="clr-namespace:WPF.Demo.DataFilter.vm"/>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <DataGrid x:Name="mainDg">
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>    
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Filter by employee type:"/>
+            <ComboBox Grid.Column="0" Grid.Row="1" Width="100" ItemsSource="{DynamicResource EmployeeTypes}" SelectedValue="{Binding EmployeeTypeSelected}">
+                <ComboBox.Resources>
+                    <col:ArrayList x:Key="EmployeeTypes">
+                        <sys:String >E1</sys:String>
+                        <sys:String >E2</sys:String>
+                        <sys:String >E3</sys:String>
+                    </col:ArrayList>
+                </ComboBox.Resources> 
+            </ComboBox>
+        </Grid>
+        <DataGrid x:Name="mainDg" Grid.Row="1" Width="500" AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource Locator}, Path=EmployeeModel.EmployeeList.Employees}">
+            <DataGrid.Columns>
+                <DataGridHyperlinkColumn Header="UserId" Binding="{Binding Path=userId}" Width="90" />
+                <DataGridTextColumn Header="FirstName" Binding="{Binding Path=firstName}" Width="80" />
+                <DataGridTextColumn Header="LastName" Binding="{Binding Path=lastName}" Width="50" />
+                <DataGridTextColumn Header="EmployeeCode" Binding="{Binding Path=employeeCode}" Width="90" />
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </Window>

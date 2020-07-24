@@ -14,7 +14,7 @@ namespace WPF.Demo.DataFilter.Common
         }
         public IEnumerable<T> Apply(IEnumerable<T> values)
         {
-            return values.Where(w => this.filters.Compare(w));
+            return values?.Where(w => this.filters.Compare(w));
         }
     }
 }

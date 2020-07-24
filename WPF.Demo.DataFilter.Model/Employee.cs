@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WPF.Demo.DataFilter.DAL
+namespace WPF.Demo.DataFilter.Model
 {
 
     public class Employee

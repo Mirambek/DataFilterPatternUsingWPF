@@ -8,6 +8,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WPF.Demo.DataFilter.DAL;
+using WPF.Demo.DataFilter.Repository;
+using WPF.Demo.DataFilter.ViewModels;
 
 namespace WPF.Demo.DataFilter
 {
@@ -18,6 +21,8 @@ namespace WPF.Demo.DataFilter
     {
         private readonly IHost host;
 
+        public static IServiceProvider ServiceProvider;
+
         public App()
         {
             host = Host.CreateDefaultBuilder()
@@ -26,13 +31,15 @@ namespace WPF.Demo.DataFilter
                        ConfigureServices(context.Configuration, services);
                    })
                    .Build();
+            ServiceProvider = host.Services;
         }
 
         private void ConfigureServices(IConfiguration configuration,
             IServiceCollection services)
         {            
             services.AddSingleton<MainWindow>();
-
+            services.AddScoped<IEmployeesRepository, EmployeesRepository>();
+            services.AddScoped<EmployeesViewModel>();
         }
 
         protected override async void OnStartup(StartupEventArgs e)

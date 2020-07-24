@@ -7,6 +7,8 @@ namespace WPF.Demo.DataFilter.Common
 {
     public class ComparerAggregator<T> : IFilterComparer<T>
     {
+        public delegate void EventHandler();
+        public event EventHandler OnFilterChanged;
         private readonly IEnumerable<IFilterComparer<T>> aggregate;
         public ComparerAggregator(IEnumerable<IFilterComparer<T>> aggregate)
         {

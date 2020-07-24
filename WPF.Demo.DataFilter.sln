@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF.Demo.DataFilter.Common"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF.Demo.DataFilter", "WPF.Demo.DataFilter\WPF.Demo.DataFilter.csproj", "{812B50CB-78E4-4A12-BC51-D3B89A7A273A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Demo.DataFilter.Repository", "WPF.Demo.DataFilter.Repository\WPF.Demo.DataFilter.Repository.csproj", "{82A94C7F-E0E9-4427-9AA3-2337B76E4B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Demo.DataFilter.Model", "WPF.Demo.DataFilter.Model\WPF.Demo.DataFilter.Model.csproj", "{310595D7-8F02-4923-869E-75B86DA57612}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{812B50CB-78E4-4A12-BC51-D3B89A7A273A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812B50CB-78E4-4A12-BC51-D3B89A7A273A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{812B50CB-78E4-4A12-BC51-D3B89A7A273A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A94C7F-E0E9-4427-9AA3-2337B76E4B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A94C7F-E0E9-4427-9AA3-2337B76E4B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A94C7F-E0E9-4427-9AA3-2337B76E4B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A94C7F-E0E9-4427-9AA3-2337B76E4B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310595D7-8F02-4923-869E-75B86DA57612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310595D7-8F02-4923-869E-75B86DA57612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310595D7-8F02-4923-869E-75B86DA57612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310595D7-8F02-4923-869E-75B86DA57612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
