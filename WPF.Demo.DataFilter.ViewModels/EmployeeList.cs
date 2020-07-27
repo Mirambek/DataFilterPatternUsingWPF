@@ -12,7 +12,7 @@ namespace WPF.Demo.DataFilter.ViewModels
     public sealed class EmployeeList: ViewModelBase
     {
         private IEnumerable<Employee> employeesFullList;
-        private readonly IFilter<Employee> filters;
+        private readonly Filter<Employee> filters;
         private IEmployeesRepository repository;
 
         private IEnumerable<Employee> employees;
@@ -21,11 +21,11 @@ namespace WPF.Demo.DataFilter.ViewModels
             get => employees;
             set => Set(ref employees, value);
         }
-        public EmployeeList(IEmployeesRepository repository, ComparerAggregator<Employee> filterAggregate)
+        public EmployeeList(IEmployeesRepository repository, ConditionAggregator<Employee> conditionAggregator)
         {
             this.repository = repository;
-            this.filters = new Filter<Employee>(filterAggregate);
-            filterAggregate.OnFilterChanged += this.FilterList;
+            this.filters = new ConcreteFilter<Employee>(conditionAggregator);
+            conditionAggregator.OnFilterChanged += this.FilterList;
             _ = initAsync();
         }
 

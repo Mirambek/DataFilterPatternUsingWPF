@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace WPF.Demo.DataFilter.Common
 {
-    public interface IFilter<T>
+    public interface ICondition<T>
     {
-        IEnumerable<T> Apply(IEnumerable<T> values);
+        bool Check(T value);
     }
 }

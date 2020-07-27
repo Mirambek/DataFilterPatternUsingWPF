@@ -19,13 +19,13 @@ namespace WPF.Demo.DataFilter.ViewModels
             set
             {
                 Set(ref employeeTypeSelected, value);
-                this.comparerAggregator?.RaiseFilterChanged();
+                this.conditionAggregator?.RaiseFilterChanged();
                 
             }
         }
 
         private EmployeeList employeeList;
-        private readonly ComparerAggregator<Employee> comparerAggregator;
+        private readonly ConditionAggregator<Employee> conditionAggregator;
 
         public EmployeeList EmployeeList
         {
@@ -38,9 +38,9 @@ namespace WPF.Demo.DataFilter.ViewModels
         public EmployeesViewModel(IEmployeesRepository repository)
         {
             this.repository = repository;
-            FilterComparer<Employee> filterEmployee = new FilterComparer<Employee>((e) => e.employeeCode == this.EmployeeTypeSelected);
-            this.comparerAggregator = new ComparerAggregator<Employee>(new List<FilterComparer<Employee>> { filterEmployee });
-            this.EmployeeList = new EmployeeList(repository, this.comparerAggregator);            
+            Condition<Employee> filterEmployee = new Condition<Employee>((e) => e.employeeCode == this.EmployeeTypeSelected);
+            this.conditionAggregator = new ConditionAggregator<Employee>(new List<Condition<Employee>> { filterEmployee });
+            this.EmployeeList = new EmployeeList(repository, this.conditionAggregator);            
         }
         
     }

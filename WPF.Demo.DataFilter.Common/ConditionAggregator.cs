@@ -5,18 +5,18 @@ using System.Linq;
 
 namespace WPF.Demo.DataFilter.Common
 {
-    public class ComparerAggregator<T> : IFilterComparer<T>
+    public class ConditionAggregator<T> : ICondition<T>
     {
         public delegate void EventHandler();
         public event EventHandler OnFilterChanged;
-        private readonly IEnumerable<IFilterComparer<T>> aggregate;
-        public ComparerAggregator(IEnumerable<IFilterComparer<T>> aggregate)
+        private readonly IEnumerable<ICondition<T>> aggregate;
+        public ConditionAggregator(IEnumerable<ICondition<T>> aggregate)
         {
             this.aggregate = aggregate;
         }
-        public bool Compare(T value)
+        public bool Check(T value)
         {
-            return aggregate.All(a=>a.Compare(value));
+            return aggregate.All(a=>a.Check(value));
         }
 
         public void RaiseFilterChanged()
