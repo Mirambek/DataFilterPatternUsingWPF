@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WPF.Demo.DataFilter.ViewModels.EmployeesViewModel">
+    <Position X="1" Y="1.25" Width="2" />
+    <Members>
+      <Method Name="EmployeesViewModel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAoAAACAAAAAAAAAAAgAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>EmployeesViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EmployeeList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WPF.Demo.DataFilter.ViewModels.EmployeeList">
+    <Position X="4.25" Y="1.25" Width="1.75" />
+    <Members>
+      <Method Name="EmployeeList" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAIAIAACAKAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>EmployeeList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
