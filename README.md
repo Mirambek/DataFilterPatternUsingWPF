@@ -1,8 +1,4 @@
-<ul class="download">
-	<li><a href="https://github.com/Mirambek/DataFilterPatternUsingWPF">Source code</a></li>
-</ul>
 
-<h2>Introduction</h2>
 
 <p>This article demonstrates filter pattern with generic lambda expression on WPF. Filter pattern along with pipeline is heavily used in data driven application. With c# lambda expression, the code can be shorted and generalized.</p>
 
