@@ -1,3 +1,4 @@
+Here is correct formatted version: https://www.codeproject.com/Tips/5274982/Filter-Pattern-with-Generic-Lambda-Expression-on-W
 
 
 <p>This article demonstrates filter pattern with generic lambda expression on WPF. Filter pattern along with pipeline is heavily used in data driven application. With c# lambda expression, the code can be shorted and generalized.</p>
